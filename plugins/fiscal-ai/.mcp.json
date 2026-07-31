@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "fiscal": {
+      "url": "https://api.fiscal.ai/mcp"
+    }
+  }
+}

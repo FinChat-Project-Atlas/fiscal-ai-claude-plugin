@@ -1,0 +1,33 @@
+{
+  "name": "fiscal-ai",
+  "owner": {
+    "name": "Fiscal.ai",
+    "email": "info@fiscal.ai"
+  },
+  "description": "Official Fiscal.ai tools and research workflows for Claude.",
+  "plugins": [
+    {
+      "name": "fiscal-ai",
+      "displayName": "Fiscal.ai",
+      "source": "./plugins/fiscal-ai",
+      "description": "Source-linked public-company financial data and research through the production Fiscal.ai MCP.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fiscal.ai",
+        "email": "info@fiscal.ai",
+        "url": "https://fiscal.ai"
+      },
+      "homepage": "https://docs.fiscal.ai/docs/guides/mcp-integration",
+      "repository": "https://github.com/FinChat-Project-Atlas/fiscal-ai-claude-plugin",
+      "keywords": [
+        "fiscal",
+        "public-equity",
+        "financial-data",
+        "company-filings",
+        "public-company-data",
+        "mcp"
+      ],
+      "category": "financial-services"
+    }
+  ]
+}
