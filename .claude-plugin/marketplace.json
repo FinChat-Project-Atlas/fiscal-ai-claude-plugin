@@ -11,7 +11,7 @@
       "displayName": "Fiscal.ai",
       "source": "./plugins/fiscal-ai",
       "description": "Source-linked public-company financial data and research through the production Fiscal.ai MCP.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Fiscal.ai",
         "email": "info@fiscal.ai",

@@ -1,7 +1,7 @@
 {
   "name": "fiscal-ai",
   "displayName": "Fiscal.ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Source-linked public-company financial data and research through the production Fiscal.ai MCP.",
   "author": {
     "name": "Fiscal.ai",
