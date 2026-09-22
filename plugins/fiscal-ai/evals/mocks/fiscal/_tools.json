@@ -1,0 +1,34 @@
+{
+  "tools": [
+    {
+      "name": "api_docs",
+      "description": "Get Fiscal.ai API documentation, usage guidance, company identifier rules, and helper signatures for execute_code. Use this when you need available function names, parameters, or response types; pass functions to request only specific helpers.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "functions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional codemode function names to document. Omit for the full reference with usage guidance."
+          }
+        }
+      },
+      "annotations": { "readOnlyHint": true, "destructiveHint": false, "openWorldHint": true }
+    },
+    {
+      "name": "execute_code",
+      "description": "Execute plain JavaScript in exact `async () => { ... }` form in a network-isolated, 30-second sandbox to retrieve and analyze Fiscal.ai data. Use `codemode.<name>` helpers from api_docs, run at most six calls concurrently, split broader workflows, and emit one compact result with console.log(). Use this for company profiles, filings, financials, ratios, prices, news, segments, KPIs, ownership, fund letters, and earnings events.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Plain JavaScript in exact `async () => { ... }` form, e.g. `async () => { const r = await codemode.company_profile({ companyKey: \"NASDAQ_MSFT\" }); console.log(JSON.stringify(r)); }`. No Markdown fences, imports, TypeScript syntax, named functions, or bare body."
+          }
+        },
+        "required": ["code"]
+      },
+      "annotations": { "readOnlyHint": true, "destructiveHint": false, "openWorldHint": true }
+    }
+  ]
+}

@@ -28,3 +28,15 @@ actions depend on the signed-in user's Fiscal.ai plan and live MCP entitlements.
 
 - [Fiscal.ai MCP integration](https://docs.fiscal.ai/docs/guides/mcp-integration)
 - [Fiscal.ai](https://fiscal.ai)
+
+## Evals
+
+`plugins/fiscal-ai/evals/` holds a `claude plugin eval` suite. The Fiscal MCP is mocked under `evals/mocks/fiscal/`
+(`api_docs` is a fixed catalog; `execute_code` is an agent mock that simulates the sandbox against fixture data), so
+the suite runs without credentials.
+
+```bash
+cd plugins/fiscal-ai
+claude plugin eval .                                   # all cases, with and without the plugin
+claude plugin eval . --case financials-pull --runs 1 --ablation none   # iterate on one case
+```
