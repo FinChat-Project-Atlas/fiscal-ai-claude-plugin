@@ -1,7 +1,8 @@
 ---
-description: Free-plan demo must stay on trial companies and offer a substitute for a non-trial company.
+description: 'Free-plan demo must stay on trial companies and offer a substitute for a non-trial company.'
 tags: [trial, guardrail]
-max_turns: 15
+max_turns: 20
+timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill]
 ---
 

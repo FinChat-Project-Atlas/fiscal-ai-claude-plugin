@@ -1,7 +1,8 @@
 ---
-description: Snapshot workflow should batch api_docs, run one execute_code, and link terminalUrl without over-fetching.
+description: 'Snapshot fetches profile and ratios, batches api_docs first, links terminalUrl, and skips ownership, daily ratios, and segments.'
 tags: [retrieval, snapshot]
-max_turns: 15
+max_turns: 20
+timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill]
 ---
 

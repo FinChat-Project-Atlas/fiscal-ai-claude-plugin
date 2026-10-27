@@ -1,5 +1,6 @@
 ---
-type: regex
-target: mock_calls
-pattern: 'codemode\.(company_stock_prices)\('
+type: tool_used
+tool: mcp__plugin_fiscal-ai_fiscal__execute_code
+input_match: 'codemode\.(company_stock_prices)\('
+arm: 'with-only'
 ---
