@@ -73,7 +73,7 @@ monitoring plan in one conversation.
 | Sector or industry landscape | [Industry report](references/fiscal-industry-report.md) |
 | What changed across a supplied list | [Watchlist monitor](references/fiscal-watchlist-monitor.md) |
 | Full source-backed investment memo | [Investment research](references/fiscal-investment-research.md) |
-| Free-plan demonstration | [Trial tour](references/fiscal-trial-tour.md) and [trial tickers](references/trial-tickers.md) |
+| Free-plan demonstration | [Trial tour](references/fiscal-trial-tour.md) and [trial companies](references/trial-tickers.md) |
 
 ## Composition rules
 
