@@ -1,10 +1,10 @@
 # Fiscal Trial Tour
 
-Read [the Fiscal MCP contract](mcp-workflow.md) and [trial ticker list](trial-tickers.md) before validating a user-provided company.
+Read [the Fiscal MCP contract](mcp-workflow.md) and [where to find the trial companies](trial-tickers.md) before validating a user-provided company.
 
 ## Budget
 
-- Use only companies in the bundled trial list. Treat the server’s live 403 response or `api_docs` free-plan notice as authoritative if the list has drifted.
+- Use only trial companies, as listed on the Free Trial page. The server’s live 403 response or `api_docs` free-plan notice is authoritative.
 - Target five MCP helper calls, leaving a sixth attempt for one retry. Profiles and filing-backed financials may make additional service requests, so do not describe this as the total subrequest count or spend the full daily allowance merely to demonstrate breadth.
 - Never fetch filing images/PDFs or full price histories in the default tour.
 
