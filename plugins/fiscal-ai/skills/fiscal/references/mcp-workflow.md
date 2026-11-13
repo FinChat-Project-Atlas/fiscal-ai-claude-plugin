@@ -11,8 +11,8 @@ Use this contract for every Fiscal workflow. It reflects the production Fiscal.a
   JavaScript forms, but do not rely on that behavior. Avoid Markdown fences, imports, TypeScript annotations,
   interfaces, and `as` casts.
 - The sandbox is network-isolated. Use only injected `codemode.*` helpers; direct `fetch()`, `connect()`, and external modules cannot work.
-- Use exact helper and input-field names returned by `api_docs`. Sandbox helper arguments do not receive a second local
-  schema-validation pass, so a misspelled field can become an omitted parameter.
+- Use exact helper and input-field names returned by `api_docs`. Check parameters against the documented signature
+  before calling a helper.
 - Finish within 30 seconds. A timeout does not guarantee already-dispatched helper calls were cancelled.
 
 ## Minimize calls safely
@@ -22,8 +22,8 @@ Use this contract for every Fiscal workflow. It reflects the production Fiscal.a
    Do not make one documentation call per helper. Request the full catalog only to discover a capability whose helper
    name is genuinely unknown.
 2. Prefer one `execute_code` invocation only when the complete workflow comfortably fits the deadline. Split broad screens, long windows, or multi-stage reports into explicit discovery, ranking, and deepening invocations instead of forcing one oversized run.
-3. Keep to no more than six independent `codemode.*` promises at once as a reliability budget, even though the runtime
-   does not enforce a concurrency counter. Use batches of 4-6 for larger sets. Use `Promise.all` for required calls
+3. Keep to no more than six independent `codemode.*` promises at once as a reliability budget.
+   Use batches of 4-6 for larger sets. Use `Promise.all` for required calls
    and `Promise.allSettled` for optional enrichments so they cannot erase the core result.
 4. Resolve dependencies before fan-out: fetch a profile or first catalog page, inspect it, then conditionally call covered endpoints. Do not claim a coverage gate and simultaneously fire gated calls.
 5. Fetch only the lenses the user requested. Do not add prices, news, ownership, daily multiples, catalogs, or all three statements to a narrow question.
