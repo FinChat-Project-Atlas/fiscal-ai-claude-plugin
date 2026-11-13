@@ -10,8 +10,8 @@
       "name": "fiscal-ai",
       "displayName": "Fiscal.ai",
       "source": "./plugins/fiscal-ai",
-      "description": "Institutional-grade financial data for equities trusted for powering analyst AI workflows.  The Fiscal connector is the all-in-one stock market data solution for:",
-      "version": "1.0.3",
+      "description": "The all-in-one financial market data connector for equity research",
+      "version": "1.0.4",
       "author": {
         "name": "Fiscal.ai",
         "email": "info@fiscal.ai",
