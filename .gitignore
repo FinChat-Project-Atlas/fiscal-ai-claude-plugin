@@ -2,3 +2,11 @@
 *.log
 scratchpad/
 plugins/fiscal-ai/evals/results/
+
+# Local credentials
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+*.pem
+*.key

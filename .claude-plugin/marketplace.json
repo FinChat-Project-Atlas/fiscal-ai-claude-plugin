@@ -4,14 +4,14 @@
     "name": "Fiscal.ai",
     "email": "info@fiscal.ai"
   },
-  "description": "Official Fiscal.ai tools and research workflows for Claude.",
+  "description": "Stock research, company comparisons, financial statements and earnings analysis with Fiscal.ai.",
   "plugins": [
     {
       "name": "fiscal-ai",
       "displayName": "Fiscal.ai",
       "source": "./plugins/fiscal-ai",
-      "description": "Source-linked public-company financial data and research through the production Fiscal.ai MCP.",
-      "version": "1.0.2",
+      "description": "Institutional-grade financial data for equities trusted for powering analyst AI workflows.  The Fiscal connector is the all-in-one stock market data solution for:",
+      "version": "1.0.3",
       "author": {
         "name": "Fiscal.ai",
         "email": "info@fiscal.ai",
@@ -20,12 +20,23 @@
       "homepage": "https://docs.fiscal.ai/docs/guides/mcp-integration",
       "repository": "https://github.com/FinChat-Project-Atlas/fiscal-ai-claude-plugin",
       "keywords": [
-        "fiscal",
-        "public-equity",
-        "financial-data",
+        "stock-research",
+        "investment-research",
+        "stocks",
+        "financial-statements",
+        "earnings",
+        "valuation",
+        "company-comparison",
+        "stock-screener",
         "company-filings",
-        "public-company-data",
-        "mcp"
+        "financial-data",
+        "fiscal",
+        "earnings-transcripts",
+        "estimates",
+        "guidance",
+        "etfs",
+        "mutual-funds",
+        "politician-trades"
       ],
       "category": "financial-services"
     }

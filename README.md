@@ -1,11 +1,21 @@
-# Fiscal.ai agent plugin
+# Fiscal.ai for investment research
 
-The official Fiscal.ai plugin combines the production Fiscal.ai MCP with source-linked public-company research
-workflows.
+Institutional-grade financial data for equities trusted for powering analyst AI workflows.  The Fiscal connector is the all-in-one stock market data solution for:
 
-It supports company discovery, filings, financial statements, segments and KPIs, prices, capitalization, ratios,
-news, earnings events and transcripts, fund letters, ownership, comparisons, screening, watchlists, financial
-models, valuation, accounting quality, credit analysis, industry reports, and investment research.
+- Financials, Ratios, Segments and KPIs
+- Earnings Transcripts & Presentations
+- News
+- Estimates & Guidance
+- Quotes
+- Filings
+- Insider and Institutional Ownership
+- Politician Trades
+- ETFs & Mutual Funds
+- Aggregated Hedge Fund Letters
+
+Built for investment research, every number is updated immediately and linked back to the source for verifiable quality and trusted by the world’s leading financial institutions and technology firms.
+
+The Fiscal AI MCP Connector provides data on all publicly-traded stocks in the US, Canada, EU, UK, Global ADRs and a growing list of international markets covering most of the global market cap.
 
 ## Claude Code
 
@@ -28,6 +38,14 @@ actions depend on the signed-in user's Fiscal.ai plan and live MCP entitlements.
 
 - [Fiscal.ai MCP integration](https://docs.fiscal.ai/docs/guides/mcp-integration)
 - [Fiscal.ai](https://fiscal.ai)
+- [Help center](https://fiscal.ai/help/)
+- [Privacy policy](https://fiscal.ai/privacy-policy/)
+- [Terms of service](https://fiscal.ai/terms-of-service/)
+
+## License
+
+This plugin is proprietary. See [LICENSE](plugins/fiscal-ai/LICENSE). Fiscal.ai data and services are covered by
+the applicable Fiscal.ai agreement, not by the plugin license.
 
 ## Evals
 
