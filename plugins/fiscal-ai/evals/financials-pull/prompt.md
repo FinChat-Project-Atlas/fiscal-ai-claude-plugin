@@ -1,7 +1,8 @@
 ---
-description: Narrow statement pull should fetch only the income statement, not ratios or other statements.
+description: 'Narrow statement pull fetches only the income statement and cites audit links per year.'
 tags: [retrieval, financials]
-max_turns: 15
+max_turns: 20
+timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill]
 ---
 

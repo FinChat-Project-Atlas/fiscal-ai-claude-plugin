@@ -2,6 +2,7 @@
 *.log
 scratchpad/
 plugins/fiscal-ai/evals/results/
+plugins/fiscal-ai/manual-evals/results/
 
 # Local credentials
 .env

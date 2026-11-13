@@ -1,5 +1,5 @@
 ---
 type: regex
-pattern: 'api\.fiscal\.ai'
+pattern: 'https?://api\.fiscal\.ai'
 match: not_contains
 ---

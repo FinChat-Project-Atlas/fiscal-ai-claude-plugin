@@ -1,7 +1,8 @@
 ---
-description: Price question should use company_stock_prices only, slice in-sandbox, and label the return as price-only.
+description: 'Price question uses company_stock_prices only, slices in-sandbox, and labels the return as price-only.'
 tags: [retrieval, prices]
-max_turns: 15
+max_turns: 20
+timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill]
 ---
 

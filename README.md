@@ -49,12 +49,43 @@ the applicable Fiscal.ai agreement, not by the plugin license.
 
 ## Evals
 
-`plugins/fiscal-ai/evals/` holds a `claude plugin eval` suite. The Fiscal MCP is mocked under `evals/mocks/fiscal/`
-(`api_docs` is a fixed catalog; `execute_code` is an agent mock that simulates the sandbox against fixture data), so
-the suite runs without credentials.
+`plugins/fiscal-ai/evals/` contains live, read-only research cases and an unrelated-question check.
+The write and invalid-credential cases are separate in `plugins/fiscal-ai/manual-evals/`.
+
+Each run starts with a fresh Claude Code configuration. A saved Fiscal.ai sign-in does not carry over.
+To authenticate, copy `plugins/fiscal-ai/` into the gitignored `scratchpad/fiscal-eval-plugin/` directory and
+add this header to the `fiscal` server in that copy's `.mcp.json`:
+
+```json
+"headers": {
+  "Authorization": "Bearer ${EVAL_FISCAL_BEARER}"
+}
+```
+
+Use your secret manager to inject `EVAL_FISCAL_BEARER` into the eval process. Eval children inherit `EVAL_*`
+variables. Keep the credential value out of files, command arguments, reports and commits. A Fiscal.ai API key
+can test public financial data; account operations require an OAuth token with the relevant consent.
+
+Start with one case, one run and one agent at a time:
 
 ```bash
-cd plugins/fiscal-ai
-claude plugin eval .                                   # all cases, with and without the plugin
-claude plugin eval . --case financials-pull --runs 1 --ablation none   # iterate on one case
+claude plugin eval scratchpad/fiscal-eval-plugin --case financials-pull --runs 1 --ablation none --concurrency 1 --max-cost-usd 5 --no-publish --mocks off --allow-tools "mcp__plugin_fiscal-ai_fiscal__*"
 ```
+
+These calls use the live service and paid models. The cost threshold is checked between runs, so a run already
+in progress can exceed it. Review the result and cost before selecting more cases. The standard suite has
+25 cases; without explicit limits, the CLI defaults to three repetitions and both with/without-plugin arms.
+
+Run the invalid-credential case separately using the same test copy with a deliberately invalid, non-secret value:
+
+```bash
+EVAL_FISCAL_BEARER=invalid-test-credential claude plugin eval scratchpad/fiscal-eval-plugin --eval-dir manual-evals --case connector-unavailable --runs 1 --ablation none --concurrency 1 --max-cost-usd 5 --no-publish --mocks off --allow-tools "mcp__plugin_fiscal-ai_fiscal__*"
+```
+
+The `watchlist-write` case can change a real watchlist. Run it only against a disposable test account whose owner
+has authorized that mutation, with a separately consented OAuth token. Select it explicitly with
+`--eval-dir manual-evals --case watchlist-write`; retain the run, concurrency, cost and `--no-publish` flags above.
+Never run both manual cases together: they require different credentials.
+
+Results can contain live financial or account data. `--no-publish` prevents automatic private report uploads.
+Keep generated results in the gitignored test copy and never add result artifacts to this public repository.
