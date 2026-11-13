@@ -1,7 +1,8 @@
 ---
-description: Two-company comparison should fetch ratios per company and never scan companies_list for peers.
+description: 'Two-company comparison fetches ratios per company and never scans companies_list or pulls unrequested lenses.'
 tags: [analysis, comp-set]
-max_turns: 15
+max_turns: 20
+timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill]
 ---
 
